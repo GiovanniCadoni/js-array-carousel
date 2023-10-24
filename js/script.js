@@ -15,8 +15,8 @@ for (let i = 0; i < images.length; i++)
 }
 
 //Aggiunta dei bottoni
-imgString += `<div class="prev"></div>`;
-imgString += `<div class="next"></div>`;
+imgString += `<div id="preview" class="prev"></div>`;
+imgString += `<div id="next" class="next"></div>`;
 console.log(imgString);
 
 //Inserimento della stringa nel file Html
@@ -30,3 +30,33 @@ console.log(imgSlide);
 let currentSlideIndex = 0;
 imgSlide[currentSlideIndex].classList.add("active");
 
+//E infine occupiamoci del poter scorrere le immagini tramite i bottoni
+document.getElementById("next").addEventListener("click", function ()
+{
+    if(currentSlideIndex < imgSlide.length - 1)
+    {
+        imgSlide[currentSlideIndex].classList.remove("active");
+        currentSlideIndex++;
+        imgSlide[currentSlideIndex].classList.add("active");
+    } else if (currentSlideIndex === imgSlide.length -1 )
+    {
+        imgSlide[currentSlideIndex].classList.remove("active");
+        currentSlideIndex = 0;
+        imgSlide[currentSlideIndex].classList.add("active");
+    }
+})
+
+document.getElementById("preview").addEventListener("click", function ()
+{
+    if(currentSlideIndex > 0)
+    {
+        imgSlide[currentSlideIndex].classList.remove("active");
+        currentSlideIndex--;
+        imgSlide[currentSlideIndex].classList.add("active");
+    } else if (currentSlideIndex === 0)
+    {
+        imgSlide[currentSlideIndex].classList.remove("active");
+        currentSlideIndex = imgSlide.length - 1;
+        imgSlide[currentSlideIndex].classList.add("active");
+    }
+})

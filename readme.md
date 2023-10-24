@@ -14,4 +14,7 @@ Al termine di questa fase ci ritroveremo con lo stesso slider stilato nella mile
 Aggiungere il **ciclo infinito** del carosello. Ovvero se è attiva la prima immagine e l'utente clicca la freccia per andare all’immagine precedente, dovrà comparire l’ultima immagine dell’array e viceversa.
 
 **Procedimento:**
-1. 
+1. Rimuoviamo le classi e le immagini dal file html.
+2. Aggiungiamo le classi e le immagini in maniera dinamica grazie a javascript.
+3. Non dimentichiamoci di inserire pure i bottoni.
+4. Infine creiamo la navigazione tra le varie immagini grazie ai bottoni visti in precedenza.
